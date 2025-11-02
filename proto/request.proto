@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package task_manager;
+
+option go_package = "github.com/TemaKut/messenger-client-proto/gen/go;taskmanager";
+
+message Request {
+  string id = 1;
+
+  reserved 2 to 20;
+
+  oneof data {
+    UserRegister user_register = 21;
+  }
+}
+
+
+message UserRegister {
+  string name = 1;
+  string last_name = 2;
+}
