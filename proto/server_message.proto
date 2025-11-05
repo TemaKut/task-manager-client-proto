@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package task_manager;
+
+option go_package = "github.com/TemaKut/task-manager-client-proto/gen/go;taskmanager";
+
+import "response.proto";
+import "error.proto";
+
+message ServerMessage {
+  oneof data {
+    Response response = 1;
+    // TODO Update = 2;
+    ResponseError response_error = 3;
+  }
+}

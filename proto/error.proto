@@ -6,17 +6,16 @@ option go_package = "github.com/TemaKut/task-manager-client-proto/gen/go;taskman
 
 import "google/protobuf/timestamp.proto";
 
-message Response {
+message ResponseError {
   string request_id = 1;
   google.protobuf.Timestamp server_time = 2;
-
-  reserved 3 to 30;
-
-  oneof data {
-    UserRegisterResponse user_register = 31;
-  }
+  ResponseErrorType error_type = 3;
+  string description = 4;
 }
 
-message UserRegisterResponse {
 
+enum ResponseErrorType {
+  RESPONSE_ERROR_TYPE_UNSPECIFIED = 0;
+  RESPONSE_ERROR_TYPE_REQUEST_HAS_NO_ID = 1;
 }
+

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package task_manager;
 
-option go_package = "github.com/TemaKut/messenger-client-proto/gen/go;taskmanager";
+option go_package = "github.com/TemaKut/task-manager-client-proto/gen/go;taskmanager";
 
 message Request {
   string id = 1;
